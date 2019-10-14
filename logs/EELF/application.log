@@ -1,0 +1,247 @@
+2019-10-13 19:25:54,675|||main||||INFO||||||| EELF0005I Searching path "${user.home};etc;../etc" for log configuration file "logback-test.xml"
+2019-10-13 19:25:54,676|||main||||INFO||||||| EELF0001I Loading default logging configuration from system resource file "com/att/eelf/logback.xml"
+2019-10-13 19:25:54,849|||main||||INFO||||||| JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-10-13 19:25:54,972|||main||||INFO||||||| Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$6f32e11c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-13 19:25:55,205|||main||||INFO||||||| Logging initialized @2878ms to org.eclipse.jetty.util.log.Slf4jLog
+2019-10-13 19:25:55,281|||main||||INFO||||||| Server initialized with port: 8080
+2019-10-13 19:25:55,282|||main||||INFO||||||| jetty-9.4.15.v20190215; built: 2019-02-15T16:53:49.381Z; git: eb70b240169fcf1abbd86af36482d1c49826fa0b; jvm 1.8.0_212-b04
+2019-10-13 19:25:55,313|||main||||INFO||||||| Initializing Spring embedded WebApplicationContext
+2019-10-13 19:25:55,313|||main||||INFO||||||| Root WebApplicationContext: initialization completed in 1844 ms
+2019-10-13 19:25:55,595|||main||||INFO||||||| Mapping servlet: 'CamelServlet' to [/camel/*]
+2019-10-13 19:25:55,597|||main||||INFO||||||| Mapping servlet: 'dispatcherServlet' to [/]
+2019-10-13 19:25:55,598|||main||||INFO||||||| Mapping filter: 'metricsFilter' to: [/*]
+2019-10-13 19:25:55,598|||main||||INFO||||||| Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-10-13 19:25:55,599|||main||||INFO||||||| Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-10-13 19:25:55,599|||main||||INFO||||||| Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-10-13 19:25:55,599|||main||||INFO||||||| Mapping filter: 'requestContextFilter' to: [/*]
+2019-10-13 19:25:55,599|||main||||INFO||||||| Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2019-10-13 19:25:55,599|||main||||INFO||||||| Mapping filter: 'applicationContextIdFilter' to: [/*]
+2019-10-13 19:25:55,688|||main||||INFO||||||| DefaultSessionIdManager workerName=node0
+2019-10-13 19:25:55,689|||main||||INFO||||||| No SessionScavenger set, using defaults
+2019-10-13 19:25:55,690|||main||||INFO||||||| node0 Scavenging every 660000ms
+2019-10-13 19:25:55,699|||main||||INFO||||||| Started o.s.b.c.e.j.JettyEmbeddedWebAppContext@4b8d604b{application,/,[file:///tmp/jetty-docbase.7271114000064809745.8080/],AVAILABLE}
+2019-10-13 19:25:55,699|||main||||INFO||||||| Started @3374ms
+2019-10-13 19:25:55,745|||main||||WARN||||||| Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'nodesConfiguration': Unsatisfied dependency expressed through field 'translatorConfiguration'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'translatorConfiguration': Unsatisfied dependency expressed through field 'configTranslator'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'configTranslator' defined in class path resource [org/onap/aai/sparky/config/SchemaConfiguration.class]: Unsatisfied dependency expressed through method 'configTranslator' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'schemaLocationsBean': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'schema.configuration.location' in value "${schema.configuration.location}"
+2019-10-13 19:25:55,748|||main||||INFO||||||| node0 Stopped scavenging
+2019-10-13 19:25:55,751|||main||||INFO||||||| Stopped o.s.b.c.e.j.JettyEmbeddedWebAppContext@4b8d604b{application,/,[file:///tmp/jetty-docbase.7271114000064809745.8080/],UNAVAILABLE}
+2019-10-13 19:25:55,763|||main||||INFO||||||| 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2019-10-13 19:25:55,770|||main||||ERROR||||||| Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'nodesConfiguration': Unsatisfied dependency expressed through field 'translatorConfiguration'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'translatorConfiguration': Unsatisfied dependency expressed through field 'configTranslator'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'configTranslator' defined in class path resource [org/onap/aai/sparky/config/SchemaConfiguration.class]: Unsatisfied dependency expressed through method 'configTranslator' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'schemaLocationsBean': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'schema.configuration.location' in value "${schema.configuration.location}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:764)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:124)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.onap.aai.sparky.Application.main(Application.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'translatorConfiguration': Unsatisfied dependency expressed through field 'configTranslator'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'configTranslator' defined in class path resource [org/onap/aai/sparky/config/SchemaConfiguration.class]: Unsatisfied dependency expressed through method 'configTranslator' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'schemaLocationsBean': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'schema.configuration.location' in value "${schema.configuration.location}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1139)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1067)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'configTranslator' defined in class path resource [org/onap/aai/sparky/config/SchemaConfiguration.class]: Unsatisfied dependency expressed through method 'configTranslator' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'schemaLocationsBean': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'schema.configuration.location' in value "${schema.configuration.location}"
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1072)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:511)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1139)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1067)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	... 38 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'schemaLocationsBean': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'schema.configuration.location' in value "${schema.configuration.location}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:370)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1139)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 51 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'schema.configuration.location' in value "${schema.configuration.location}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:846)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1087)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1067)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364)
+	... 63 common frames omitted
+2019-10-13 19:29:23,060|||main||||INFO||||||| EELF0005I Searching path "${user.home};etc;../etc" for log configuration file "logback-test.xml"
+2019-10-13 19:29:23,060|||main||||INFO||||||| EELF0001I Loading default logging configuration from system resource file "com/att/eelf/logback.xml"
+2019-10-13 19:29:23,255|||main||||INFO||||||| JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-10-13 19:29:23,298|||main||||WARN||||||| Multiple PropertySourcesPlaceholderConfigurer beans registered [propertySourcesPlaceholderConfigurer, org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0], falling back to Environment
+2019-10-13 19:29:23,321|||main||||INFO||||||| Bean 'searchProviderRegistry' of type [org.onap.aai.sparky.search.registry.SearchProviderRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-13 19:29:23,339|||main||||INFO||||||| Bean 'sparkyResourceLoader' of type [org.onap.aai.sparky.config.SparkyResourceLoader] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-13 19:29:23,339|||main||||INFO||||||| Bean 'searchServiceRestEndpointConfig' of type [org.onap.aai.sparky.dal.rest.config.RestEndpointConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-13 19:29:23,359|||main||||INFO||||||| Logging initialized @2840ms to org.eclipse.jetty.util.log.Slf4jLog
+2019-10-13 19:29:23,378|||main||||INFO||||||| Bean 'searchServiceAdapter' of type [org.onap.aai.sparky.search.SearchServiceAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-13 19:29:23,380|||main||||INFO||||||| Bean 'aggregateVnfSearchProvider' of type [org.onap.aai.sparky.aggregatevnf.search.AggregateVnfSearchProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-13 19:29:23,383|||main||||INFO||||||| Bean 'registerAggregateVnfSearchProvider' of type [org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-13 19:29:23,393|||main||||INFO||||||| Bean 'pairingHashMap' of type [org.springframework.beans.factory.config.MapFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-13 19:29:23,393|||main||||INFO||||||| Bean 'pairingHashMap' of type [java.util.HashMap] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-13 19:29:23,394|||main||||INFO||||||| Bean 'suggestiveSearchConfigs' of type [org.onap.aai.sparky.search.config.SuggestionConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-13 19:29:23,399|||main||||INFO||||||| Bean 'oxmEntityLookup' of type [org.onap.aai.sparky.config.oxm.OxmEntityLookup] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-13 19:29:23,403|||main||||INFO||||||| Bean 'viewInspectSearchProvider' of type [org.onap.aai.sparky.viewandinspect.search.ViewInspectSearchProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-13 19:29:23,403|||main||||INFO||||||| Bean 'registerViewInspectSearchProvider' of type [org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-13 19:29:23,462|||main||||INFO||||||| Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$f753fb42] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-13 19:29:23,744|||main||||INFO||||||| Server initialized with port: 8080
+2019-10-13 19:29:23,745|||main||||INFO||||||| jetty-9.4.15.v20190215; built: 2019-02-15T16:53:49.381Z; git: eb70b240169fcf1abbd86af36482d1c49826fa0b; jvm 1.8.0_212-b04
+2019-10-13 19:29:23,864|||main||||INFO||||||| Initializing Spring embedded WebApplicationContext
+2019-10-13 19:29:23,864|||main||||INFO||||||| Root WebApplicationContext: initialization completed in 2365 ms
+2019-10-13 19:29:24,086|||main||||INFO||||||| Mapping servlet: 'CamelServlet' to [/camel/*]
+2019-10-13 19:29:24,088|||main||||INFO||||||| Mapping servlet: 'dispatcherServlet' to [/]
+2019-10-13 19:29:24,089|||main||||INFO||||||| Mapping filter: 'metricsFilter' to: [/*]
+2019-10-13 19:29:24,089|||main||||INFO||||||| Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-10-13 19:29:24,089|||main||||INFO||||||| Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-10-13 19:29:24,090|||main||||INFO||||||| Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-10-13 19:29:24,090|||main||||INFO||||||| Mapping filter: 'requestContextFilter' to: [/*]
+2019-10-13 19:29:24,090|||main||||INFO||||||| Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2019-10-13 19:29:24,090|||main||||INFO||||||| Mapping filter: 'applicationContextIdFilter' to: [/*]
+2019-10-13 19:29:24,155|||main||||INFO||||||| DefaultSessionIdManager workerName=node0
+2019-10-13 19:29:24,155|||main||||INFO||||||| No SessionScavenger set, using defaults
+2019-10-13 19:29:24,156|||main||||INFO||||||| node0 Scavenging every 660000ms
+2019-10-13 19:29:24,163|||main||||INFO||||||| Started o.s.b.c.e.j.JettyEmbeddedWebAppContext@14bdbc74{application,/,[file:///tmp/jetty-docbase.9183575415403286192.8080/],AVAILABLE}
+2019-10-13 19:29:24,163|||main||||INFO||||||| Started @3645ms
+2019-10-13 19:29:24,198|||main||||WARN||||||| Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'nodesConfiguration': Unsatisfied dependency expressed through field 'translatorConfiguration'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'translatorConfiguration': Unsatisfied dependency expressed through field 'configTranslator'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'configTranslator' defined in class path resource [org/onap/aai/sparky/config/SchemaConfiguration.class]: Unsatisfied dependency expressed through method 'configTranslator' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'schemaLocationsBean': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'schema.configuration.location' in value "${schema.configuration.location}"
+2019-10-13 19:29:24,201|||main||||INFO||||||| node0 Stopped scavenging
+2019-10-13 19:29:24,203|||main||||INFO||||||| Stopped o.s.b.c.e.j.JettyEmbeddedWebAppContext@14bdbc74{application,/,[file:///tmp/jetty-docbase.9183575415403286192.8080/],UNAVAILABLE}
+2019-10-13 19:29:24,212|||main||||INFO||||||| 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2019-10-13 19:29:24,218|||main||||ERROR||||||| Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'nodesConfiguration': Unsatisfied dependency expressed through field 'translatorConfiguration'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'translatorConfiguration': Unsatisfied dependency expressed through field 'configTranslator'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'configTranslator' defined in class path resource [org/onap/aai/sparky/config/SchemaConfiguration.class]: Unsatisfied dependency expressed through method 'configTranslator' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'schemaLocationsBean': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'schema.configuration.location' in value "${schema.configuration.location}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:764)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:124)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.onap.aai.sparky.Application.main(Application.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'translatorConfiguration': Unsatisfied dependency expressed through field 'configTranslator'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'configTranslator' defined in class path resource [org/onap/aai/sparky/config/SchemaConfiguration.class]: Unsatisfied dependency expressed through method 'configTranslator' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'schemaLocationsBean': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'schema.configuration.location' in value "${schema.configuration.location}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1139)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1067)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'configTranslator' defined in class path resource [org/onap/aai/sparky/config/SchemaConfiguration.class]: Unsatisfied dependency expressed through method 'configTranslator' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'schemaLocationsBean': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'schema.configuration.location' in value "${schema.configuration.location}"
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1072)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:511)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1139)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1067)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	... 38 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'schemaLocationsBean': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'schema.configuration.location' in value "${schema.configuration.location}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:370)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1139)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 51 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'schema.configuration.location' in value "${schema.configuration.location}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:846)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1087)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1067)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364)
+	... 63 common frames omitted

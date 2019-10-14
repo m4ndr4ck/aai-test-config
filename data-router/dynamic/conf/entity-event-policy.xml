@@ -11,7 +11,7 @@
     <property name="searchEndpointDocuments" value = "documents" />
     <property name="searchEntitySearchIndex" value="entity-search-index" />
     <property name="searchTopographySearchIndex" value="topography-search-index" />
-    <property name="searchEntityAutoSuggestIndex" value="entity-autosuggest-index" />
+    <property name="searchEntityAutoSuggestIndex" value="entityautosuggestindex" />
     <property name="searchAggregationVnfIndex" value="aggregate-vnf-index" />
     <property name="searchCertName" value="client-cert-onap.p12" />
     <property name="searchKeystorePwd" value="OBF:1y0q1uvc1uum1uvg1pil1pjl1uuq1uvk1uuu1y10" />
@@ -20,7 +20,7 @@
     <property name="schemaLocationsBean" ref="schemaLocationsBean" />
   </bean>
 
-  <bean id="consumerBeanEntityEvent" class="org.onap.aai.event.client.DMaaPEventConsumer" >
+  <!--  <bean id="consumerBeanEntityEvent" class="org.onap.aai.event.client.DMaaPEventConsumer" >
     <constructor-arg name="host" value="mr.api.simpledemo.openecomp.org:3905" />
     <constructor-arg name="topic" value="AAI-EVENT" />
     <constructor-arg name="username" value="" />
@@ -32,8 +32,9 @@
     <constructor-arg name="transportType" value="HTTPAUTH" />
     <constructor-arg name="protocol" value="https" /> 
     <constructor-arg name="filter"><null /></constructor-arg>
-  </bean>
-
+  </bean>-->
+  
+  <bean id="nodeIngestor" class="org.onap.aai.nodes.NodeIngestor" autowire="byName"/>
   <bean id="entityEventPolicy" class="org.onap.aai.datarouter.policy.EntityEventPolicy" init-method="startup" >
     <constructor-arg ref="eepConfig"/>
   </bean>

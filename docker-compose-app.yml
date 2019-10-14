@@ -1,7 +1,7 @@
 version: '2'
 services:
   aai-resources.api.simpledemo.onap.org:
-    image: ${DOCKER_REGISTRY}/onap/aai-resources
+    image: index.docker.io/onap/aai-resources:1.5.0
     hostname: aai-resources.api.simpledemo.onap.org
     environment:
       - LOCAL_USER_ID=${USER_ID}
@@ -10,28 +10,28 @@ services:
       - 8447:8447
     volumes:
       - ${RESOURCES_LOGS}:/opt/aai/logroot/AAI-RES
-      - /opt/test-config/aai-resources/appconfig/janusgraph-realtime.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-realtime.properties
-      - /opt/test-config/aai-resources/appconfig/janusgraph-cached.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-cached.properties
-      - /opt/test-config/aai-resources/appconfig/aaiconfig.properties:/opt/app/aai-resources/resources/etc/appprops/aaiconfig.properties
-      - /opt/test-config/aai-resources/appconfig/application.properties:/opt/app/aai-resources/resources/application.properties
-      - /opt/test-config/aai-resources/appconfig/logback.xml:/opt/app/aai-resources/resources/logback.xml
-      - /opt/test-config/aai-resources/appconfig/localhost-access-logback.xml:/opt/app/aai-resources/resources/localhost-access-logback.xml
-      - /opt/test-config/aai-resources/appconfig/aai_keystore:/opt/app/aai-resources/resources/etc/auth/aai_keystore
-      - /opt/test-config/aai-resources/appconfig/realm.properties:/opt/app/aai-resources/resources/etc/auth/realm.properties
-      - /opt/test-config/aai-resources/appconfig/aaf/cadi.properties:/opt/app/aai-resources/resources/cadi.properties
-      - /opt/test-config/aai-resources/appconfig/aaf/org.onap.aai.keyfile:/opt/app/aai-resources/resources/aaf/org.onap.aai.keyfile
-      - /opt/test-config/aai-resources/appconfig/aaf/org.onap.aai.p12:/opt/app/aai-resources/resources/aaf/org.onap.aai.p12
-      - /opt/test-config/aai-resources/appconfig/aaf/org.onap.aai.props:/opt/app/aai-resources/resources/aaf/org.onap.aai.props
-      - /opt/test-config/aai-resources/appconfig/aaf/org.osaaf.location.props:/opt/app/aai-resources/resources/aaf/org.osaaf.location.props
-      - /opt/test-config/aai-resources/appconfig/aaf/permissions.properties:/opt/app/aai-resources/resources/aaf/permissions.properties
-      - /opt/test-config/aai-resources/appconfig/aaf/truststoreONAPall.jks:/opt/app/aai-resources/resources/aaf/truststoreONAPall.jks
+      - ./aai-resources/appconfig/janusgraph-realtime.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-realtime.properties
+      - ./aai-resources/appconfig/janusgraph-cached.properties:/opt/app/aai-resources/resources/etc/appprops/janusgraph-cached.properties
+      - ./aai-resources/appconfig/aaiconfig.properties:/opt/app/aai-resources/resources/etc/appprops/aaiconfig.properties
+      - ./aai-resources/appconfig/application.properties:/opt/app/aai-resources/resources/application.properties
+      - ./aai-resources/appconfig/logback.xml:/opt/app/aai-resources/resources/logback.xml
+      - ./aai-resources/appconfig/localhost-access-logback.xml:/opt/app/aai-resources/resources/localhost-access-logback.xml
+      - ./aai-resources/appconfig/aai_keystore:/opt/app/aai-resources/resources/etc/auth/aai_keystore
+      - ./aai-resources/appconfig/realm.properties:/opt/app/aai-resources/resources/etc/auth/realm.properties
+      - ./aai-resources/appconfig/aaf/cadi.properties:/opt/app/aai-resources/resources/cadi.properties
+      - ./aai-resources/appconfig/aaf/org.onap.aai.keyfile:/opt/app/aai-resources/resources/aaf/org.onap.aai.keyfile
+      - ./aai-resources/appconfig/aaf/org.onap.aai.p12:/opt/app/aai-resources/resources/aaf/org.onap.aai.p12
+      - ./aai-resources/appconfig/aaf/org.onap.aai.props:/opt/app/aai-resources/resources/aaf/org.onap.aai.props
+      - ./aai-resources/appconfig/aaf/org.osaaf.location.props:/opt/app/aai-resources/resources/aaf/org.osaaf.location.props
+      - ./aai-resources/appconfig/aaf/permissions.properties:/opt/app/aai-resources/resources/aaf/permissions.properties
+      - ./aai-resources/appconfig/aaf/truststoreONAPall.jks:/opt/app/aai-resources/resources/aaf/truststoreONAPall.jks
     logging:
       driver: "json-file"
       options:
-        max-size: "30m"
+        max-size: "31m"
         max-file: "5"
   aai-traversal.api.simpledemo.onap.org:
-    image: ${DOCKER_REGISTRY}/onap/aai-traversal
+    image: index.docker.io/onap/aai-traversal:1.5.0
     hostname: aai-traversal.api.simpledemo.onap.org
     environment:
       - LOCAL_USER_ID=${USER_ID}
@@ -39,21 +39,21 @@ services:
       - DISABLE_UPDATE_QUERY=true
     volumes:
       - ${TRAVERSAL_LOGS}:/opt/aai/logroot/AAI-GQ
-      - /opt/test-config/aai-traversal/appconfig/janusgraph-realtime.properties:/opt/app/aai-traversal/resources/etc/appprops/janusgraph-realtime.properties
-      - /opt/test-config/aai-traversal/appconfig/janusgraph-cached.properties:/opt/app/aai-traversal/resources/etc/appprops/janusgraph-cached.properties
-      - /opt/test-config/aai-traversal/appconfig/aaiconfig.properties:/opt/app/aai-traversal/resources/etc/appprops/aaiconfig.properties
-      - /opt/test-config/aai-traversal/appconfig/application.properties:/opt/app/aai-traversal/resources/application.properties
-      - /opt/test-config/aai-traversal/appconfig/logback.xml:/opt/app/aai-traversal/resources/logback.xml
-      - /opt/test-config/aai-traversal/appconfig/localhost-access-logback.xml:/opt/app/aai-traversal/resources/localhost-access-logback.xml
-      - /opt/test-config/aai-traversal/appconfig/aai_keystore:/opt/app/aai-traversal/resources/etc/auth/aai_keystore
-      - /opt/test-config/aai-traversal/appconfig/realm.properties:/opt/app/aai-traversal/resources/etc/auth/realm.properties
-      - /opt/test-config/aai-traversal/appconfig/aaf/cadi.properties:/opt/app/aai-traversal/resources/cadi.properties
-      - /opt/test-config/aai-traversal/appconfig/aaf/org.onap.aai.keyfile:/opt/app/aai-traversal/resources/aaf/org.onap.aai.keyfile
-      - /opt/test-config/aai-traversal/appconfig/aaf/org.onap.aai.p12:/opt/app/aai-traversal/resources/aaf/org.onap.aai.p12
-      - /opt/test-config/aai-traversal/appconfig/aaf/org.onap.aai.props:/opt/app/aai-traversal/resources/aaf/org.onap.aai.props
-      - /opt/test-config/aai-traversal/appconfig/aaf/org.osaaf.location.props:/opt/app/aai-traversal/resources/aaf/org.osaaf.location.props
-      - /opt/test-config/aai-traversal/appconfig/aaf/permissions.properties:/opt/app/aai-traversal/resources/aaf/permissions.properties
-      - /opt/test-config/aai-traversal/appconfig/aaf/truststoreONAPall.jks:/opt/app/aai-traversal/resources/aaf/truststoreONAPall.jks
+      - ./aai-traversal/appconfig/janusgraph-realtime.properties:/opt/app/aai-traversal/resources/etc/appprops/janusgraph-realtime.properties
+      - ./aai-traversal/appconfig/janusgraph-cached.properties:/opt/app/aai-traversal/resources/etc/appprops/janusgraph-cached.properties
+      - ./aai-traversal/appconfig/aaiconfig.properties:/opt/app/aai-traversal/resources/etc/appprops/aaiconfig.properties
+      - ./aai-traversal/appconfig/application.properties:/opt/app/aai-traversal/resources/application.properties
+      - ./aai-traversal/appconfig/logback.xml:/opt/app/aai-traversal/resources/logback.xml
+      - ./aai-traversal/appconfig/localhost-access-logback.xml:/opt/app/aai-traversal/resources/localhost-access-logback.xml
+      - ./aai-traversal/appconfig/aai_keystore:/opt/app/aai-traversal/resources/etc/auth/aai_keystore
+      - ./aai-traversal/appconfig/realm.properties:/opt/app/aai-traversal/resources/etc/auth/realm.properties
+      - ./aai-traversal/appconfig/aaf/cadi.properties:/opt/app/aai-traversal/resources/cadi.properties
+      - ./aai-traversal/appconfig/aaf/org.onap.aai.keyfile:/opt/app/aai-traversal/resources/aaf/org.onap.aai.keyfile
+      - ./aai-traversal/appconfig/aaf/org.onap.aai.p12:/opt/app/aai-traversal/resources/aaf/org.onap.aai.p12
+      - ./aai-traversal/appconfig/aaf/org.onap.aai.props:/opt/app/aai-traversal/resources/aaf/org.onap.aai.props
+      - ./aai-traversal/appconfig/aaf/org.osaaf.location.props:/opt/app/aai-traversal/resources/aaf/org.osaaf.location.props
+      - ./aai-traversal/appconfig/aaf/permissions.properties:/opt/app/aai-traversal/resources/aaf/permissions.properties
+      - ./aai-traversal/appconfig/aaf/truststoreONAPall.jks:/opt/app/aai-traversal/resources/aaf/truststoreONAPall.jks
     ports:
       - 8446:8446
     logging:
@@ -62,21 +62,21 @@ services:
         max-size: "30m"
         max-file: "5"
   aai-graphadmin.api.simpledemo.onap.org:
-    image: ${DOCKER_REGISTRY}/onap/aai-graphadmin
+    image: index.docker.io/onap/aai-graphadmin
     hostname: aai-graphadmin.api.simpledemo.onap.org
     environment:
       - LOCAL_USER_ID=${USER_ID}
       - LOCAL_GROUP_ID=${GROUP_ID}
     volumes:
       - ${GRAPHADMIN_LOGS}:/opt/aai/logroot/AAI-GA
-      - /opt/test-config/aai-graphadmin/appconfig/janusgraph-realtime.properties:/opt/app/aai-graphadmin/resources/etc/appprops/janusgraph-realtime.properties
-      - /opt/test-config/aai-graphadmin/appconfig/janusgraph-cached.properties:/opt/app/aai-graphadmin/resources/etc/appprops/janusgraph-cached.properties
-      - /opt/test-config/aai-graphadmin/appconfig/aaiconfig.properties:/opt/app/aai-graphadmin/resources/etc/appprops/aaiconfig.properties
-      - /opt/test-config/aai-graphadmin/appconfig/application.properties:/opt/app/aai-graphadmin/resources/application.properties
-      - /opt/test-config/aai-graphadmin/appconfig/logback.xml:/opt/app/aai-graphadmin/resources/logback.xml
-      - /opt/test-config/aai-graphadmin/appconfig/localhost-access-logback.xml:/opt/app/aai-graphadmin/resources/localhost-access-logback.xml
-      - /opt/test-config/aai-graphadmin/appconfig/aai_keystore:/opt/app/aai-graphadmin/resources/etc/auth/aai_keystore
-      - /opt/test-config/aai-graphadmin/appconfig/realm.properties:/opt/app/aai-graphadmin/resources/etc/auth/realm.properties
+      - ./aai-graphadmin/appconfig/janusgraph-realtime.properties:/opt/app/aai-graphadmin/resources/etc/appprops/janusgraph-realtime.properties
+      - ./aai-graphadmin/appconfig/janusgraph-cached.properties:/opt/app/aai-graphadmin/resources/etc/appprops/janusgraph-cached.properties
+      - ./aai-graphadmin/appconfig/aaiconfig.properties:/opt/app/aai-graphadmin/resources/etc/appprops/aaiconfig.properties
+      - ./aai-graphadmin/appconfig/application.properties:/opt/app/aai-graphadmin/resources/application.properties
+      - ./aai-graphadmin/appconfig/logback.xml:/opt/app/aai-graphadmin/resources/logback.xml
+      - ./aai-graphadmin/appconfig/localhost-access-logback.xml:/opt/app/aai-graphadmin/resources/localhost-access-logback.xml
+      - ./aai-graphadmin/appconfig/aai_keystore:/opt/app/aai-graphadmin/resources/etc/auth/aai_keystore
+      - ./aai-graphadmin/appconfig/realm.properties:/opt/app/aai-graphadmin/resources/etc/auth/realm.properties
     ports:
       - 8449:8449
     logging:
@@ -94,8 +94,8 @@ services:
       - aai-traversal.api.simpledemo.onap.org
     volumes:
       - /dev/log:/dev/log
-      - /opt/test-config/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
-      - /opt/test-config/haproxy/aai.pem:/etc/ssl/private/aai.pem
+      - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+      - ./haproxy/aai.pem:/etc/ssl/private/aai.pem
     logging:
       driver: "json-file"
       options:
@@ -103,11 +103,11 @@ services:
         max-file: "5"
 
   aai.searchservice.simpledemo.openecomp.org:
-    image: ${DOCKER_REGISTRY}/onap/search-data-service
+    image: index.docker.io/onap/search-data-service
     hostname: aai.searchservice.simpledemo.openecomp.org
     volumes:
       - ${SEARCH_LOGS}:/logs
-      - /opt/test-config/search-data-service/appconfig:/opt/app/search-data-service/config
+      - ./search-data-service/appconfig:/opt/app/search-data-service/config
     ports:
       - 9509:9509
     environment:
@@ -117,36 +117,37 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-size: "30m"
+        max-size: "31m"
         max-file: "5"
 
   datarouter:
-    image: ${DOCKER_REGISTRY}/onap/data-router
+    image: index.docker.io/onap/data-router:1.4.0
     hostname: data-router
     volumes:
       - ${DATA_ROUTER_LOGS}:/logs
-      - /opt/test-config/data-router/appconfig:/opt/app/data-router/config
-      - /opt/test-config/data-router/dynamic:/opt/app/data-router/dynamic
+      - ./data-router/appconfig:/opt/app/data-router/config
+      - ./data-router/dynamic:/opt/app/data-router/dynamic
+      - ./oxm:/opt/app/data-router/onap/oxm
     ports:
       - 9502:9502
     environment:
       - CONFIG_HOME=/opt/app/data-router/config/
       - KEY_STORE_PASSWORD=OBF:1y0q1uvc1uum1uvg1pil1pjl1uuq1uvk1uuu1y10
       - KEY_MANAGER_PASSWORD=OBF:1y0q1uvc1uum1uvg1pil1pjl1uuq1uvk1uuu1y10
-      - DYNAMIC_ROUTES=/opt/app/data-router/dynamic/routes
+        #- DYNAMIC_ROUTES=/opt/app/data-router/dynamic/routes
       - SERVICE_BEANS=/opt/app/data-router/dynamic/conf
     logging:
       driver: "json-file"
       options:
-        max-size: "30m"
+        max-size: "33m"
         max-file: "5"
 
   model-loader:
-    image: ${DOCKER_REGISTRY}/onap/model-loader
+    image: index.docker.io/onap/model-loader:1.4.0
     hostname: model-loader
     volumes:
       - ${MODEL_LOADER_LOGS}:/logs
-      - /opt/test-config/model-loader/appconfig:/opt/app/model-loader/config
+      - ./model-loader/appconfig:/opt/app/model-loader/config
     environment:
       - CONFIG_HOME=/opt/app/model-loader/config/
     logging:
@@ -156,36 +157,38 @@ services:
         max-file: "5"
 
   sparky-be:
-    image: ${DOCKER_REGISTRY}/onap/sparky-be
+    image: index.docker.io/onap/sparky-be
     hostname: sparky-be
     volumes:
-      - ${UI_LOGS}:/logs
-      - /opt/test-config/sparky/appconfig/auth:/opt/app/sparky/config/auth
-      - /opt/test-config/sparky/appconfig/portal:/opt/app/sparky/config/portal
-      - /opt/test-config/sparky/appconfig/application.properties:/opt/app/sparky/config/application.properties
-      - /opt/test-config/sparky/appconfig/application-oxm-default.properties:/opt/app/sparky/config/application-oxm-default.properties
-      - /opt/test-config/sparky/appconfig/application-oxm-schema-prod.properties:/opt/app/sparky/config/application-oxm-schema-prod.properties
-      - /opt/test-config/sparky/appconfig/application-resources.properties:/opt/app/sparky/config/application-resources.properties
-      - /opt/test-config/sparky/appconfig/application-ssl.properties:/opt/app/sparky/config/application-ssl.properties
-      - /opt/test-config/sparky/appconfig/users.config:/opt/app/sparky/config/users.config
-      - /opt/test-config/sparky/appconfig/roles.config:/opt/app/sparky/config/roles.config
+      - ./sparky/logroot/AAI-UI:/var/log/onap/AAI-UI
+      - ./sparky/appconfig:/opt/app/sparky/config
+      - ./oxm:/opt/app/sparky/target/oxm/onap/oxm
+      - ./sparky/appconfig/portal:/opt/app/sparky/config/portal
+      - ./sparky/appconfig/application.properties:/opt/app/sparky/config/application.properties
+        #- ./sparky/appconfig/application-oxm-default.properties:/opt/app/sparky/config/application-oxm-default.properties
+      - ./sparky/appconfig/application-oxm-override.properties:/opt/app/sparky/config/application-oxm-override.properties
+        #- ./sparky/appconfig/application-oxm-schema-prod.properties:/opt/app/sparky/config/application-oxm-schema-prod.properties
+      - ./sparky/appconfig/application-resources.properties:/opt/app/sparky/config/application-resources.properties
+        #- ./sparky/appconfig/application-ssl.properties:/opt/app/sparky/config/application-ssl.properties
+        #- ./sparky/appconfig/users.config:/opt/app/sparky/config/users.config
+        #- ./sparky/appconfig/roles.config:/opt/app/sparky/config/roles.config
 
     ports:
       - 9517:9517
     logging:
       driver: "json-file"
       options:
-        max-size: "30m"
+        max-size: "32m"
         max-file: "5"
 
   champ-service:
-    image: ${DOCKER_REGISTRY}/onap/champ
+    image: index.docker.io/onap/champ
     hostname: champ-service
     volumes:
       - ${CHAMP_LOGS}:/logs
-      - /opt/test-config/champ-service/logging/logback.xml:/opt/app/champ-service/bundleconfig/etc/logback.xml
-      - /opt/test-config/champ-service/appconfig:/opt/app/champ-service/config
-      - /opt/test-config/champ-service/dynamic:/opt/app/champ-service/dynamic
+      - ./champ-service/logging/logback.xml:/opt/app/champ-service/bundleconfig/etc/logback.xml
+      - ./champ-service/appconfig:/opt/app/champ-service/config
+      - ./champ-service/dynamic:/opt/app/champ-service/dynamic
     ports:
       - 9522:9522
     environment:
@@ -205,12 +208,12 @@ services:
         max-file: "5"
 
   crud-service:
-    image: ${DOCKER_REGISTRY}/onap/gizmo
+    image: index.docker.io/onap/gizmo:1.3.2
     hostname: crud-service
     volumes:
-      - ${CRUD_LOGS}:/logs
-      - /opt/test-config/crud-service/appconfig:/opt/app/crud-service/config
-      - /opt/test-config/crud-service/dynamic:/opt/app/crud-service/dynamic
+      - /opt/aai/logroot/AAI-CRUD-SERVICE/AAI-CRUD/:/logs
+      - ./crud-service/appconfig:/opt/app/crud-service/config
+      - ./crud-service/dynamic:/opt/app/crud-service/dynamic
     ports:
       - 9520:9520
     environment:
@@ -229,12 +232,12 @@ services:
         max-file: "5"
         
   spike-service:
-    image: ${DOCKER_REGISTRY}/onap/spike
+    image: index.docker.io/onap/spike
     hostname: spike-service
     volumes:
       - ${SPIKE_LOGS}:/logs
-      - /opt/test-config/spike-service/appconfig:/opt/app/spike-service/config
-      - /opt/test-config/spike-service/dynamic:/opt/app/spike-service/dynamic
+      - ./spike-service/appconfig:/opt/app/spike-service/config
+      - ./spike-service/dynamic:/opt/app/spike-service/dynamic
     ports:
       - 9518:9518
     environment:
@@ -253,11 +256,11 @@ services:
         max-file: "5"
 
   babel:
-    image: ${DOCKER_REGISTRY}/onap/babel
+    image: index.docker.io/onap/babel
     hostname: babel
     volumes:
       - ${BABEL_LOGS}:/opt/app/babel/logs/AAI-BAS
-      - /opt/test-config/babel/appconfig:/opt/app/babel/config      
+      - ./babel/appconfig:/opt/app/babel/config      
     ports:
       - 9516:9516
     environment:
@@ -273,4 +276,4 @@ networks:
   default:
       driver: bridge
       driver_opts:
-        com.docker.network.driver.mtu: ${MTU}
+        com.docker.network.driver.mtu: 1500

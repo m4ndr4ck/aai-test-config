@@ -9,7 +9,7 @@ services:
       - 7199:7199
       - 9042:9042
       - 9160:9160
-    network_mode: "host"
+   #network_mode: "host"
     environment:
       - CASSANDRA_SEEDS=aai.hbase.simpledemo.onap.org
       - CASSANDRA_DC=Heat
@@ -27,9 +27,9 @@ services:
     ports:
       - "9200:9200"
     volumes:
-      - /opt/test-config/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-      - /opt/test-config/elasticsearch/config/jvm.options:/usr/share/elasticsearch/config/jvm.options
-      - /opt/test-config/elasticsearch/config/log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./elasticsearch/config/jvm.options:/usr/share/elasticsearch/config/jvm.options
+      - ./elasticsearch/config/log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties
       - es-data:/usr/share/elasticsearch/data
     logging:
       driver: "json-file"
@@ -41,7 +41,7 @@ networks:
   default: 
       driver: bridge
       driver_opts:
-        com.docker.network.driver.mtu: ${MTU}
+        com.docker.network.driver.mtu: 1500
 
 volumes:
   es-data:
